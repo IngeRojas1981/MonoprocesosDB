@@ -1,0 +1,83 @@
+﻿@model MVCCore.MonoProcesosDB.CRUD.Models.Proceso
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Proceso</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Cliente" class="control-label"></label>
+                <input asp-for="Cliente" class="form-control" />
+                <span asp-validation-for="Cliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ciudad" class="control-label"></label>
+                <input asp-for="Ciudad" class="form-control" />
+                <span asp-validation-for="Ciudad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NIT" class="control-label"></label>
+                <input asp-for="NIT" class="form-control" />
+                <span asp-validation-for="NIT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Total_Factura" class="control-label"></label>
+                <input asp-for="Total_Factura" class="form-control" />
+                <span asp-validation-for="Total_Factura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subtotal" class="control-label"></label>
+                <input asp-for="Subtotal" class="form-control" />
+                <span asp-validation-for="Subtotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Iva" class="control-label"></label>
+                <input asp-for="Iva" class="form-control" />
+                <span asp-validation-for="Iva" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Retencion" class="control-label"></label>
+                <input asp-for="Retencion" class="form-control" />
+                <span asp-validation-for="Retencion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fecha_Creacion" class="control-label"></label>
+                <input asp-for="Fecha_Creacion" class="form-control" />
+                <span asp-validation-for="Fecha_Creacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+                <input asp-for="Estado" class="form-control" />
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Pagada" /> @Html.DisplayNameFor(model => model.Pagada)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fecha_Pago" class="control-label"></label>
+                <input asp-for="Fecha_Pago" class="form-control" />
+                <span asp-validation-for="Fecha_Pago" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

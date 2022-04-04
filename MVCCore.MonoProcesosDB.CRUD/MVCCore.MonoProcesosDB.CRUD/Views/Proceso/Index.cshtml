@@ -1,0 +1,95 @@
+﻿@model IEnumerable<MVCCore.MonoProcesosDB.CRUD.Models.Proceso>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ciudad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NIT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total_Factura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Subtotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Iva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Retencion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha_Creacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pagada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha_Pago)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ciudad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NIT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total_Factura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subtotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Iva)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Retencion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha_Creacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pagada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha_Pago)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Codigo_Factura }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Codigo_Factura }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Codigo_Factura })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
